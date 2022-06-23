@@ -1,0 +1,97 @@
+{
+  "project_info": {
+    "project_number": "958590552020",
+    "project_id": "fir-loginwithemailandpass",
+    "storage_bucket": "fir-loginwithemailandpass.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:958590552020:android:b642b209b6d995af107841",
+        "android_client_info": {
+          "package_name": "com.example.firebaseloginwithemailandpass"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "958590552020-irlm74i06702n64phnh6kl9577aa2tdu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBTpeAU0ff3VqGc_84EF1u9leXopzrA7EU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "958590552020-7juhmcu2ups783lbo7im9kahs62qd672.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:958590552020:android:944119f38c7c8c4c107841",
+        "android_client_info": {
+          "package_name": "com.example.loginemailandgoogle"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "958590552020-irlm74i06702n64phnh6kl9577aa2tdu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBTpeAU0ff3VqGc_84EF1u9leXopzrA7EU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "958590552020-7juhmcu2ups783lbo7im9kahs62qd672.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:958590552020:android:866ef472f7fa3204107841",
+        "android_client_info": {
+          "package_name": "net.smallacademy.authenticatorapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "958590552020-irlm74i06702n64phnh6kl9577aa2tdu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBTpeAU0ff3VqGc_84EF1u9leXopzrA7EU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "958590552020-7juhmcu2ups783lbo7im9kahs62qd672.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
