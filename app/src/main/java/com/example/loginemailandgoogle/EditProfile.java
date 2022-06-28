@@ -62,7 +62,7 @@ public class EditProfile extends AppCompatActivity {
         goBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(EditProfile.this, MainActivity.class));
+                startActivity(new Intent(EditProfile.this, Profile.class));
             }
         });
 
@@ -86,10 +86,10 @@ public class EditProfile extends AppCompatActivity {
                 edited.put("phone",profilePhone.getText().toString());
                 docRef.update(edited).addOnSuccessListener(aVoid1 -> {
                     Toast.makeText(EditProfile.this, "Profile Updated", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                    startActivity(new Intent(getApplicationContext(), Profile.class));
                     finish();
                 });
-                Toast.makeText(EditProfile.this, "Email is changed.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(EditProfile.this, "Profile Updated.", Toast.LENGTH_SHORT).show();
             }).addOnFailureListener(e -> Toast.makeText(EditProfile.this,   e.getMessage(), Toast.LENGTH_SHORT).show());
 
 

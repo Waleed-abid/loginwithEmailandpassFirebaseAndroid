@@ -23,7 +23,7 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
 
-public class MainActivity extends AppCompatActivity {
+public class Profile extends AppCompatActivity {
     private static final int GALLERY_INTENT_CODE = 1023 ;
     TextView fullName,email,phone,verifyMsg;
     FirebaseAuth fAuth;
@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_profile);
         phone = findViewById(R.id.profilePhone);
         fullName = findViewById(R.id.profileName);
         email    = findViewById(R.id.profileEmail);
@@ -103,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
             passwordResetDialog.setPositiveButton("Yes", (dialog, which) -> {
                 // extract the email and send reset link
                 String newPassword = resetPassword.getText().toString();
-                user.updatePassword(newPassword).addOnSuccessListener(aVoid -> Toast.makeText(MainActivity.this, "Password Reset Successfully.", Toast.LENGTH_SHORT).show()).addOnFailureListener(e -> Toast.makeText(MainActivity.this, "Password Reset Failed.", Toast.LENGTH_SHORT).show());
+                user.updatePassword(newPassword).addOnSuccessListener(aVoid -> Toast.makeText(Profile.this, "Password Reset Successfully.", Toast.LENGTH_SHORT).show()).addOnFailureListener(e -> Toast.makeText(Profile.this, "Password Reset Failed.", Toast.LENGTH_SHORT).show());
             });
 
             passwordResetDialog.setNegativeButton("No", (dialog, which) -> {
