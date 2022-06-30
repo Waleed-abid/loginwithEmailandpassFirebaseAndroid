@@ -6,4 +6,32 @@
     android:layout_height="match_parent"
     tools:context=".ScanQR">
 
+    <Button
+        android:id="@+id/qrbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Scan and Store"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:textSize="20dp"
+        android:fontFamily="@font/aclonica"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.458"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.184" />
+
+    <TextView
+        android:id="@+id/qrtext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Some text from qr"
+        android:layout_marginLeft="30dp"
+        android:textSize="20dp"
+        android:fontFamily="@font/aclonica"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.147"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/qrbtn"
+        app:layout_constraintVertical_bias="0.098" />
 </androidx.constraintlayout.widget.ConstraintLayout>

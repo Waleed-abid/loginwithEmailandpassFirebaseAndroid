@@ -7,6 +7,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -15,6 +16,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.SignInButton;
@@ -26,14 +28,15 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class Login extends AppCompatActivity {
+    private static final int RC_SIGN_IN = 100;
     EditText mEmail,mPassword;
     Button mLoginBtn;
     TextView mCreateBtn,forgotTextLink;
     ProgressBar progressBar;
     FirebaseAuth fAuth;
     SignInButton signIn;
-    GoogleSignInOptions gso;
-    GoogleSignInClient signInClient;
+    ImageView googleBtn;
+    GoogleSignInClient mGoogleSignInClient;
     public static final int GOOGLE_SIGN_IN_CODE = 10005;
 
 
@@ -49,7 +52,6 @@ public class Login extends AppCompatActivity {
         mLoginBtn = findViewById(R.id.loginBtn);
         mCreateBtn = findViewById(R.id.createText);
         forgotTextLink = findViewById(R.id.forgotPassword);
-
 
         mLoginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -93,6 +95,7 @@ public class Login extends AppCompatActivity {
 
             }
         });
+        createGoogleRequest();
 
         mCreateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -145,4 +148,14 @@ public class Login extends AppCompatActivity {
 
 
     }
+
+    private void createGoogleRequest() {
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken(getString(R.string.default_web_client_id))
+                .requestEmail()
+                .build();
+
+        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
+    }
+
 }

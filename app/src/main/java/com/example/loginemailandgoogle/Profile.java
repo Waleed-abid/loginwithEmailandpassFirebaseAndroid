@@ -30,7 +30,7 @@ public class Profile extends AppCompatActivity {
     FirebaseFirestore fStore;
     String userId;
     Button resendCode;
-    Button resetPassLocal,changeProfileImage;
+    Button resetPassLocal,changeProfileImage, proceedToQr;
     FirebaseUser user;
     ImageView profileImage;
     StorageReference storageReference;
@@ -46,7 +46,7 @@ public class Profile extends AppCompatActivity {
 
         profileImage = findViewById(R.id.profileImage);
         changeProfileImage = findViewById(R.id.changeProfile);
-
+        proceedToQr = findViewById(R.id.proceedtoqr);
 
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
@@ -112,6 +112,14 @@ public class Profile extends AppCompatActivity {
 
             passwordResetDialog.create().show();
 
+        });
+
+        proceedToQr.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(),ScanQR.class));
+
+            }
         });
 
         changeProfileImage.setOnClickListener(v -> {

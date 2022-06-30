@@ -109,21 +109,14 @@ public class EditProfile extends AppCompatActivity {
         if(requestCode == 1000){
             if(resultCode == Activity.RESULT_OK){
                 Uri imageUri = data.getData();
-
-                //profileImage.setImageURI(imageUri);
-
                 uploadImageToFirebase(imageUri);
-
-
             }
         }
-
     }
 
     private void uploadImageToFirebase(Uri imageUri) {
         // uplaod image to firebase storage
         final StorageReference fileRef = storageReference.child("users/"+fAuth.getCurrentUser().getUid()+"/profile.jpg");
-        fileRef.putFile(imageUri).addOnSuccessListener(taskSnapshot -> fileRef.getDownloadUrl().addOnSuccessListener(uri -> Picasso.get().load(uri).into(profileImageView))).addOnFailureListener(e -> Toast.makeText(getApplicationContext(), "Failed.", Toast.LENGTH_SHORT).show());
-
+        fileRef.putFile(imageUri).addOnSuccessListener(taskSnapshot -> fileRef.getDownloadUrl().addOnSuccessListener(uri -> Picasso.get().load(uri).into(profileImageView))).addOnFailureListener(e -> Toast.makeText(getApplicationContext(), "Failed." + e.getMessage(), Toast.LENGTH_SHORT).show());
     }
 }
